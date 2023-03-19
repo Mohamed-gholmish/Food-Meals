@@ -3,7 +3,7 @@ const inputs = document.querySelectorAll("input");
 const btnSubmit = document.querySelector("#btnSubmit");
 const form = document.querySelector("form");
 let isValid = false;
-import {navMove}from './index.js'
+
 // ======== Start =========>
 
 // ========== Events===========>

@@ -1,7 +1,6 @@
 // ======== Global variables =========>
  const searchName = document.getElementById("searchByName");
  const searchLetter = document.getElementById("searchByFirstLetter");
- import {navMove}from './index.js'
  // ======== Start =========>
 
 // ======== Events =========>

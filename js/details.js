@@ -1,5 +1,4 @@
 // ======== Global variables =========>
-import {navMove}from './index.js'
  const searchParam = location.search;
  const params = new URLSearchParams(searchParam);
  const id = params.get("id");
