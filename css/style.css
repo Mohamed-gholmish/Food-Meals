@@ -1,0 +1,54 @@
+body{ background: black;
+    color: white;
+}
+/* =============== index =========> */
+.meal{
+    
+    overflow: hidden;
+}
+.imageLayer{
+    top: 100%;
+   width: 100%;
+   height: 100%;
+  background-color: white;
+}
+.meal:hover .imageLayer{
+ top: 0;
+transition: top .5s;
+opacity: 70%;
+cursor: pointer;
+}
+/* ===========search============> */
+.search input::placeholder{
+    color: white;
+}
+/* =========== index =======> */
+#nav{
+    position: fixed;
+   top: 0;
+   bottom: 0;
+  
+
+   z-index: 999;
+}
+#nav .navAppear{
+    width: 80px;
+    
+}
+#nav .navAppear i{
+    cursor: pointer;
+}
+#nav .navHidden{
+    min-width: 200px;
+ height: 100%;
+    background-color: brown;
+}
+#nav .navHidden a{
+    text-decoration: none;
+    color: white;
+    margin-block: 1rem;
+}
+.col-md-3{
+    cursor: pointer;
+}/* =========== details =======> */
+.details h3{margin-bottom:1rem;}

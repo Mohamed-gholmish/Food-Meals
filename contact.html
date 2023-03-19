@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>contact</title>
+    <link rel="icon" href="./assets/images/logo.png">
+    <!--? ===============  FontAwesome =============== -->
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <!--? ===============  BootStrap5.3 =============== -->
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <!--? ===============  Main Css File =============== -->
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!-- ========== Start Fixed ========== -->
+    <!-- fa-moon   fa-sun -->
+
+
+    <!-- ========== End Fixed ========== -->
+    <div id="nav" class="bg-danger min-vh-100 d-flex">
+      <div
+        class="navHidden d-flex flex-column justify-content-center align-items-center"
+      >
+        <a href="./search.html"> Search</a
+        ><a href="./categories.html">Categories</a
+        ><a href="./area.html"> Area</a
+        ><a href="./ingredients.html">Ingredients</a
+        ><a href="./contact.html">Contact Us</a>
+      </div>
+      <div
+        class="navAppear d-flex flex-column justify-content-between align-items-center h-100 py-3"
+      >
+        <img src="./assets/images/logo.png" alt="" class="w-50" />
+        <i
+          class="fa-solid open-close-icon fa-2x fa-align-justify bg-warning"
+        ></i>
+        <div class="icons">
+          <i class="fa-solid fa-globe d-block"></i
+          ><i class="fa-solid fa-share-nodes"></i>
+        </div>
+      </div>
+    </div>
+    <div class="contact min-vh-100">
+       <main class="container register min-vh-100 hstack w-75">
+      <form class="row g-3 my-4" id="register">
+        <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              placeholder="Enter Your Name"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Special characters and numbers not allowed</li>
+              
+            </ul>
+          </div>
+        </div>
+       
+
+        <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="email"
+              id="email"
+              class="form-control"
+              placeholder="Email Your Email"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Email Is Required</li>
+              <li>InValid Email Formate</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="number"
+              id="phone"
+              class="form-control"
+              placeholder="your Phone"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Number Is Required</li>
+              <li>Enter a vaild number</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="number"
+              id="age"
+              class="form-control"
+              placeholder="Enter Age"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Age Is Required</li>
+              <li>Minimum 10 Maxmum 80</li>
+            </ul>
+          </div>
+        </div>
+      
+         <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              placeholder="Password"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Password Is Required</li>
+              <li>
+                Minimum eight characters, at least one letter and one
+                number
+              </li>
+            </ul>
+          </div>
+        </div> 
+        <div class="col-md-6">
+          <div class="form-data">
+            <input
+              type="password"
+              id="rePassword"
+              class="form-control"
+              placeholder=" Re Password"
+            />
+            <ul class="alert alert-danger p-0 invalid-feedback">
+              <li>Password Is Not the same</li>
+             
+            </ul>
+          </div>
+        </div> 
+         <div class="col-md-12 d-flex justify-content-center">
+         
+          <button class="btn btn-outline-danger disabled" type="button"  id="btnSubmit">submit</button>
+        </div> 
+      </form>
+    </main>
+</div>
+    <!--! ============ Jquery JS File ============ -->
+    <script src="./js/jquery-3.6.4.min.js"></script>
+    <!--! ============ BootStrap JS File ============ -->
+    <script src="./js/bootstrap.bundle.min.js"></script>
+    <!--! ============ Main Js File ============ -->
+    <script src="./js/contact.js"></script>
+  </body>
+</html>
