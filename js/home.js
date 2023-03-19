@@ -1,11 +1,9 @@
 // ========== Glaobal============>
 const loading=document.querySelector(".loading");
-
+import {navMove}from './index.js'
 // ========== Events============>
 // ========== When Start============>
 getGames('mmorpg');
-
-
 // ========== Function============>
 document.querySelectorAll(".menu a").forEach(function(link){
     link.addEventListener("click",function(){

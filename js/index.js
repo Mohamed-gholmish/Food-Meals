@@ -3,7 +3,6 @@ export {navMove};
 // ======== Events =========>
 getMeals('');
 
-
 // ======== functions  =========>
 async function getMeals(mealsName){
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealsName}`);
@@ -34,7 +33,7 @@ function arafa(){
     console.log("hi");
 }
 function navMove(){
-   $(".open-close-icon").click(function(){
+     $(".open-close-icon").click(function(){
     let x = $(".navHidden").innerWidth();
     console.log(x);
     if($("#nav").css("left")=='0px'){
@@ -46,6 +45,6 @@ function navMove(){
         $(".navHidden").show(1000)
     }
     
-}); 
+});   
 }
-navMove();
+

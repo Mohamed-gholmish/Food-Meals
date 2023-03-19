@@ -1,16 +1,22 @@
 // ======== Global variables =========>
-
-// ======== When Start =========>
-getMeals();
+import {navMove}from './index.js'
+ const searchParam = location.search;
+ const params = new URLSearchParams(searchParam);
+ const id = params.get("id");
+ console.log(id);
+// ======== Start =========>
 
 // ======== functions  =========>
-async function getMeals(){
-    const api = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=52772`);
+(async function getMeals(){
+    const api = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const response = await api.json();
    
     console.log(response);
     displayData(response.meals[0]);
-};
+})();
+
+
+
 
 function displayData(mealsData){ 
     let ingredients = ``
@@ -68,3 +74,16 @@ function displayData(mealsData){
       document.getElementById("mealsData").innerHTML=mealBox;
     }
    
+    $(".open-close-icon").click(function(){
+      let x = $(".navHidden").innerWidth();
+      console.log(x);
+      if($("#nav").css("left")=='0px'){
+        $("#nav").animate({left:-x},1000) 
+        $(".navHidden").hide(1000)
+      }
+      else{
+          $("#nav").animate({left:'0px'},1000) 
+          $(".navHidden").show(1000)
+      }
+      
+  }); 

@@ -1,7 +1,9 @@
 // ======== Global variables =========>
  const searchName = document.getElementById("searchByName");
  const searchLetter = document.getElementById("searchByFirstLetter");
- import{navMove} from './index.js';
+ import {navMove}from './index.js'
+ // ======== Start =========>
+
 // ======== Events =========>
 searchLetter.addEventListener('input',function(e){
     console.log("hi")
@@ -44,4 +46,16 @@ function displayData(mealsData){
     }
     document.getElementById("mealsData").innerHTML=mealBox;
 }
-navMove();
+$(".open-close-icon").click(function(){
+    let x = $(".navHidden").innerWidth();
+    console.log(x);
+    if($("#nav").css("left")=='0px'){
+      $("#nav").animate({left:-x},1000) 
+      $(".navHidden").hide(1000)
+    }
+    else{
+        $("#nav").animate({left:'0px'},1000) 
+        $(".navHidden").show(1000)
+    }
+    
+}); 
