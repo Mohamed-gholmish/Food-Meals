@@ -4,8 +4,6 @@ const btnSubmit = document.querySelector("#btnSubmit");
 const form = document.querySelector("form");
 let isValid = false;
 
-// ======== Start =========>
-
 // ========== Events===========>
 document.querySelector("form").addEventListener("input", function (e) {
   e.preventDefault();
@@ -21,27 +19,7 @@ document.querySelector("form").addEventListener("input", function (e) {
  
 });
 
-// ============= set form =========>
-
-
-// =========== function======>
-
 // ============ validation =====>
-// form.addEventListener("input", function () {
-//   if (
-//     validationName(inputs[0]) &&
-//     validationEmail(inputs[1])&&
-  
-//     validationPassword(inputs[3]) &&
-//     validationAge(inputs[4])
-//   ) {
-//     console.log("tmm");
-//     isValid = true;
-//   } else {
-//     isValid = false;
-//   }
-// });
-
 // ============= name  =========>
 function validationName(input) {
   const regex =

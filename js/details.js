@@ -1,4 +1,5 @@
-// ======== Global variables =========>
+// ======== Global Variables =========>
+const loader = document.querySelector(".loading");
  const searchParam = location.search;
  const params = new URLSearchParams(searchParam);
  const id = params.get("id");
@@ -7,23 +8,21 @@
 
 // ======== functions  =========>
 (async function getMeals(){
+  loader.classList.remove("d-none");
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${id}`);
     const response = await api.json();
-   
-    console.log(response);
+    // console.log(response);
     displayData(response.meals[0]);
+    loader.classList.add("d-none");
 })();
 
 
-
-
 function displayData(mealsData){ 
-    let ingredients = ``
-
+    let ingredients = ``;
     for (let i = 1; i <= 20; i++) {
-        if (mealsData[`strIngredient${i}`]) {
-            ingredients += `<li class="alert alert-info m-2 p-1">${mealsData[`strMeasure${i}`]} ${mealsData[`strIngredient${i}`]}</li>`
-        }}
+      if(mealsData[`strIngredient${i}`])
+       ingredients += `<li class="alert alert-info m-2 p-1"> ${mealsData[`strIngredient${i}`]}${mealsData[`strMeasure${i}`]} </li>`
+        }
 
         let tags=mealsData.strTags?.split(",");
         if(!tags){tags=[]};
@@ -65,15 +64,16 @@ function displayData(mealsData){
          </ul>
 
          
-         <div class="tags"> <a href="" class=" btn btn-danger"> Youtube</a><a href="" class=" btn btn-success"> source</a></div>
+         <div class="tags"> <a href="${mealsData.strSource}" class=" btn btn-success mx-2"> Source</a><a href="${mealsData.strYoutube}" class=" btn btn-danger">Youtube</a></div>
         
 
        </div>
      </div>`;
       document.getElementById("mealsData").innerHTML=mealBox;
-    }
-   
-    $(".open-close-icon").click(function(){
+}
+
+
+$(".open-close-icon").click(function(){
       let x = $(".navHidden").innerWidth();
       console.log(x);
       if($("#nav").css("left")=='0px'){
@@ -85,4 +85,4 @@ function displayData(mealsData){
           $(".navHidden").show(1000)
       }
       
-  }); 
+}); 

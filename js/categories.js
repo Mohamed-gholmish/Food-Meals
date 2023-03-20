@@ -1,26 +1,21 @@
-// ======== Global variables =========>
-
-
-
+// ======== Global Variables =========>
+const loader = document.querySelector(".loading");
 // ======== Start =========>
 getMeals();
 
-// ======== Events  =========>
-// for(let i=0;i<meals.length;i++){
-//     meals[i].addEventListener('click',function (){
-// console.log("hi")
-//     })}
-
 // ======== functions  =========>
 async function getMeals() {
+  loader.classList.remove("d-none");
   const api = await fetch(
     `https://www.themealdb.com/api/json/v1/1/categories.php`
   );
   const res = await api.json();
   const { categories: response } = res;
-  console.log(response);
+  // console.log(response);
   displayData(response);
+  loader.classList.add("d-none");
 }
+
 
 function displayData(mealsData) {
   let mealBox = ``;
@@ -41,13 +36,15 @@ function displayData(mealsData) {
 }
 
 async function getMealsCatrgories(categories) {
+  loader.classList.remove("d-none");
   const api = await fetch(
     `https://www.themealdb.com/api/json/v1/1/filter.php?c=${categories}`
   );
   const res = await api.json();
   const { meals: response } = res;
-  console.log(response);
+  // console.log(response);
   displayDataCatrgories(response);
+  loader.classList.add("d-none");
 }
 function displayDataCatrgories(mealsData) {
   let mealBox = ``;

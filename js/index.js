@@ -1,15 +1,18 @@
-
-
+// ======== Global Variables =========>
+const loader = document.querySelector(".loading");
+// ======== Start  =========>
+getMeals('');
 // ======== functions  =========>
-
 async function getMeals(mealsName){
+    loader.classList.remove("d-none");
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealsName}`);
     const res = await api.json();
     const{meals:response}= res;
-    console.log(response);
+    // console.log(response);
     displayData(response);
+    loader.classList.add("d-none");
 }
- getMeals('');
+
 function displayData(mealsData){ 
     let mealBox=``;
     for(let i=0;i<mealsData.length;i++){
@@ -28,7 +31,7 @@ function displayData(mealsData){
     document.getElementById("mealsData").innerHTML=mealBox;
 } ;
 
-   $(".open-close-icon").click(function(){
+$(".open-close-icon").click(function(){
     let x = $(".navHidden").innerWidth();
     console.log(x);
     if($("#nav").css("left")=='0px'){
@@ -41,7 +44,7 @@ function displayData(mealsData){
     }
     
 }) 
- 
+
 
 
 

@@ -1,6 +1,7 @@
-// ======== Global variables =========>
- const searchName = document.getElementById("searchByName");
- const searchLetter = document.getElementById("searchByFirstLetter");
+// ======== Global Variables =========>
+const loader = document.querySelector(".loading");
+const searchName = document.getElementById("searchByName");
+const searchLetter = document.getElementById("searchByFirstLetter");
  // ======== Start =========>
 
 // ======== Events =========>
@@ -15,19 +16,25 @@ searchName.addEventListener('input',function(e){
 
 // ======== functions  =========>
 async function getMealsByName(mealsName){
+    loader.classList.remove("d-none");
     const apiName = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${mealsName}`);
     const res = await apiName.json();
     const{meals:response}= res;
-    console.log(response);
+    // console.log(response);
     displayData(response);
+    loader.classList.add("d-none");
 };
+
 async function getMealsByLetter(mealLetter){
+    loader.classList.remove("d-none");
     const apiLetter = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${mealLetter}`);
     const res = await apiLetter.json();
     const{meals:response}= res;
-    console.log(response);
+    // console.log(response);
     displayData(response);
+    loader.classList.add("d-none");
 };
+
 function displayData(mealsData){ 
     let mealBox=``;
     for(let i=0;i<mealsData.length;i++){
@@ -45,6 +52,7 @@ function displayData(mealsData){
     }
     document.getElementById("mealsData").innerHTML=mealBox;
 }
+
 $(".open-close-icon").click(function(){
     let x = $(".navHidden").innerWidth();
     console.log(x);

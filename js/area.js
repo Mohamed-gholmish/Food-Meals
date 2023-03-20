@@ -1,18 +1,19 @@
-
-
+// ======== Global Variables =========>
+const loader = document.querySelector(".loading");
 // ======== Start =========>
-getMealsArea();
-
+getMeals();
 
 // ======== functions  =========>
 async function getMeals(){
+    loader.classList.remove("d-none");
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/list.php?a=list`);
     const res = await api.json();
     const{meals:response}= res;
-    console.log(response);
     displayData(response);
+    loader.classList.add("d-none");
 };
-getMeals();
+
+
 function displayData(mealsData){ 
     let mealBox=``;
     for(let i=0;i<mealsData.length;i++){
@@ -28,12 +29,15 @@ function displayData(mealsData){
 }
 
 async function getMealsArea(area){
+    loader.classList.remove("d-none");
     const api = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?a=${area}`);
     const res = await api.json();
     const{meals:response}= res;
     console.log(response);
     displayDataArea(response);
+    loader.classList.add("d-none");
 };
+
 
 function displayDataArea(mealsData){ 
     let mealBox=``;
@@ -55,7 +59,7 @@ function displayDataArea(mealsData){
 
 function showDetails(id) {
     location.href = `../details.html?id=${id}`;
-  }
+}
 
 
 $(".open-close-icon").click(function(){
