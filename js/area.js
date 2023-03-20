@@ -49,7 +49,7 @@ function displayDataArea(mealsData){
          class="w-100  rounded-4"
          alt=""
        />
-       <div class="imageLayer position-absolute  "></div>
+       <div class="imageLayer position-absolute d-flex justify-content-center align-items-center "><h3>${mealsData[i].strMeal}</h3></div>
      
    </div>
    </div>`;
@@ -62,9 +62,10 @@ function showDetails(id) {
 }
 
 
+let x = $(".navHidden").innerWidth();
+$("#nav").animate({left:-x},500) ;
 $(".open-close-icon").click(function(){
-    let x = $(".navHidden").innerWidth();
-    console.log(x);
+    // console.log(x);
     if($("#nav").css("left")=='0px'){
       $("#nav").animate({left:-x},1000) 
       $(".navHidden").hide(1000)

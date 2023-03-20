@@ -50,12 +50,16 @@ function displayData(mealsData){
    </div>
    </div>`;
     }
-    document.getElementById("mealsData").innerHTML=mealBox;
-}
+document.getElementById("mealsData").innerHTML=mealBox;}
 
+
+
+// ========== Nav Move =========>
+let x = $(".navHidden").innerWidth();
+$("#nav").animate({left:-x},500) ;
 $(".open-close-icon").click(function(){
-    let x = $(".navHidden").innerWidth();
-    console.log(x);
+    // let x = $(".navHidden").innerWidth();
+    // console.log(x);
     if($("#nav").css("left")=='0px'){
       $("#nav").animate({left:-x},1000) 
       $(".navHidden").hide(1000)
